@@ -1,27 +1,27 @@
-# Introduction
+# 소개 Introduction
 
-The goal of this style guide is to present a set of best practices and style guidelines for one AngularJS application.
-These best practices are collected from:
+이 스타일 가이드의 목적은 AngularJS 어플리케이션에 대한 최고의 실습과 스타일 가이드라인을 제시합니다.  The goal of this style guide is to present a set of best practices and style guidelines for one AngularJS application.
+실습은 다음에서 모았습니다. These best practices are collected from:
 
-0. AngularJS source code
-0. Source code or articles I've read
-0. My own experience
+0. AngularJS 소스코드 source code
+0. 소스코드 또는 읽은 기사 Source code or articles I've read
+0. 경험 My own experience
 
-**Note 1**: this is still a draft of the style guide, its main goal is to be community-driven so filling the gaps will be greatly appreciated by the whole community.
+**Note 1**: 이 스타일 가이드는 여전히 초안 이므로, 주 목표는  this is still a draft of the style guide, its main goal is to be community-driven so filling the gaps will be greatly appreciated by the whole community.
 
-**Note 2**: before following any of the guidelines in the translations of the English document, make sure they are up-to date. The latest version of the AngularJS style guide is in the current document.
+**Note 2**: 영문 문서의 번역 가이드라인을 따르기 전에 최신상태인지 확인합니다. AngularJS 스타일가이드 문서의 최신버전은 현재 문서 입니다.  before following any of the guidelines in the translations of the English document, make sure they are up-to date. The latest version of the AngularJS style guide is in the current document.
 
-In this style guide you won't find common guidelines for JavaScript development. Such can be found at:
+이 스타일 가이드에서 자바스크립트 개발을 위한 일반적인 가이드라인은 찾을수 없기 때문에 다음 내용에서 찾으세요. In this style guide you won't find common guidelines for JavaScript development. Such can be found at:
 
-0. [Google's JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-0. [Mozilla's JavaScript style guide](https://developer.mozilla.org/en-US/docs/Developer_Guide/Coding_Style)
-0. [GitHub's JavaScript style guide](https://github.com/styleguide/javascript)
-0. [Douglas Crockford's JavaScript style guide](http://javascript.crockford.com/code.html)
-0. [Airbnb JavaScript style guide](https://github.com/airbnb/javascript)
+0. [Google의 자바스크립트 스타일 가이드](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+0. [Mozilla의 자바스크립트 스타일 가이드](https://developer.mozilla.org/en-US/docs/Developer_Guide/Coding_Style)
+0. [GitHub의 자바스크립트 스타일 가이드](https://github.com/styleguide/javascript)
+0. [Douglas Crockford의 자바스크립트 스타일 가이드](http://javascript.crockford.com/code.html)
+0. [Airbnb 자바스크립트 스타일 가이드](https://github.com/airbnb/javascript)
 
-For AngularJS development recommended is the [Google's JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+AngularJS 개발을 위해서는 구글의 가이드를 추천합니다. For AngularJS development recommended is the [Google의 자바스크립트 스타일 가이드](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
-In AngularJS's GitHub wiki there is a similar section by [ProLoser](https://github.com/ProLoser), you can check it [here](https://github.com/angular/angular.js/wiki).
+In AngularJS's GitHub wiki there is a similar section by [ProLoser](https://github.com/ProLoser), 여기서 볼수 있습니다. you can check it [here](https://github.com/angular/angular.js/wiki).
 
 # Table of content
 * [General](#general)
@@ -40,16 +40,16 @@ In AngularJS's GitHub wiki there is a similar section by [ProLoser](https://gith
 * [Contribution](#contribution)
 * [Contributors](#contributors)
 
-# General
+# 일반 General
 
-## Directory structure
+## 디렉토리 구조 Directory structure
 
-Since a large AngularJS application has many components it's best to structure it in a directory hierarchy.
-There are two main approaches:
+거대한 AngularJS 어플리캐이션은 많은 컴포넌트를 가지고 있으므로 계층적 디렉토리 구조가 가장 좋습니다. Since a large AngularJS application has many components it's best to structure it in a directory hierarchy.
+두가지의 방법이 있습니다. There are two main approaches:
 
-* Creating high-level divisions by component types and lower-level divisions by functionality.
+* 기능에 의해 하위계층을 생성하고, 컴포넌트 유형에 의해 상위계층을 생성합니다. Creating high-level divisions by component types and lower-level divisions by functionality.
 
-In this way the directory structure will look like:
+이 방법의 디렉토리 구조는 다음과 같습니다. In this way the directory structure will look like:
 
 ```
 .
@@ -83,9 +83,9 @@ In this way the directory structure will look like:
 └── test
 ```
 
-* Creating high-level divisions by functionality and lower-level divisions by component types.
+* 컴포넌트 유형에 의해 하위계층을 생성하고 기능에 의해 상위계층을 생성합니다. Creating high-level divisions by functionality and lower-level divisions by component types.
 
-Here is its layout:
+이 레이아웃은 다음과 같습니다. Here is its layout:
 
 ```
 .
@@ -123,7 +123,7 @@ Here is its layout:
 └── test
 ```
 
-* When creating directives it may be useful to put all the files associated with the given directive files (i.e. templates, CSS/SASS files, JavaScript) in a single folder. If you choose to use this style be consistent and use it everywhere along your project.
+* 지시어(directives)를 만들 때, 주어진 지시문 파일과 관련된 모든 파일(예, 템플릿, CSS/SASS, 자바스크립트)을 한 폴더에 넣으면 유용합니다. 만약 이 스타일 사용하게 된다면 일관성이 있어야 하고, 프로젝트 전체에 사용하여야 합니다. When creating directives it may be useful to put all the files associated with the given directive files (i.e. templates, CSS/SASS files, JavaScript) in a single folder. If you choose to use this style be consistent and use it everywhere along your project.
 
 ```
 app
@@ -138,8 +138,8 @@ app
         └── directive2.sass
 ```
 
-This approach can be combined with both directory structures above.
-* One more slight variation of both directory structures is the one used in [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home). In it, the unit tests for a given component are put in the folder where the component is located. This way when you make changes to a given component finding its test is easy. The tests also act as documentation and show use cases.
+이 접근은 위의 두개의 디렉토리 구조와 결합 할 수 있습니다. This approach can be combined with both directory structures above.
+* 두 디렉토리 구조에서 다른 하나는 [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home)를 사용하는 점 입니다. One more slight variation of both directory structures is the one used in [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home). 주어진 컴포넌트에 대한 단위테스트가 위치한 곳과 같은 폴더에 저장됩니다. In it, the unit tests for a given component are put in the folder where the component is located. This way when you make changes to a given component finding its test is easy. The tests also act as documentation and show use cases.
 
 ```
 services
@@ -151,15 +151,15 @@ services
     └── model1.spec.js
 ```
 
-* The `app.js` file contains route definitions, configuration and/or manual bootstrap (if required).
-* Each JavaScript file should only hold a single component. The file should be named with the component's name.
-* Use Angular project structure template like [Yeoman](http://yeoman.io), [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home).
+* 'app.js' 파일에는 라우트 정의와 구성 그리고 필요한 경우 부트스트랩을 포함합니다. The `app.js` file contains route definitions, configuration and/or manual bootstrap (if required).
+* 각각의 자바스크립트 파일은 오직 하나의 컴포넌트이여야 합니다. 이 파일은 컴포넌트의 이름을 지정해야 합니다.  Each JavaScript file should only hold a single component. The file should be named with the component's name.
+* Angular project는 [Yeoman](http://yeoman.io), [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home) 와 같은 구조 템플릿을 사용합니다. Use Angular project structure template like [Yeoman](http://yeoman.io), [ng-boilerplate](http://joshdmiller.github.io/ng-boilerplate/#/home).
 
-I prefer the first structure because it makes common components easier to find.
+일반적으로 컴포넌트를 쉽게 찾을수 있기 때문에 첫번째 구조를 선호합니다. I prefer the first structure because it makes common components easier to find.
 
-Conventions about component naming can be found in each component section.
+컴포넌트 네이밍 규칙은 각 컴포넌트 섹션에서 찾을 수 있습니다. Conventions about component naming can be found in each component section.
 
-## Markup
+## 마크업 Markup
 
 [TLDR;](http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-6-move-scripts-bottom-7200.html) Put the scripts at the bottom.
 
